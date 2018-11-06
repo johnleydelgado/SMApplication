@@ -45,7 +45,7 @@ class LoginViewController: UIViewController {
                     let alert = UIAlertController(title: "Login", message: "Login Success", preferredStyle: .alert)
                     let okButton = UIAlertAction(title: "OK", style: .default){
                         (ok) in
-                         self.performSegue(withIdentifier: "profile", sender: nil)
+                         self.performSegue(withIdentifier: "viewpager", sender: nil)
                     }
                     alert.addAction(okButton)
                     self.present(alert, animated: true, completion: nil)
