@@ -43,11 +43,14 @@ class LoginViewController: UIViewController {
                 if error == nil{
                     self.loading.hideLoading(to_view: self.view)
                     let alert = UIAlertController(title: "Login", message: "Login Success", preferredStyle: .alert)
-                    let okButton = UIAlertAction(title: "OK", style: .default)
+                    let okButton = UIAlertAction(title: "OK", style: .default){
+                        (ok) in
+                         self.performSegue(withIdentifier: "profile", sender: nil)
+                    }
                     alert.addAction(okButton)
                     self.present(alert, animated: true, completion: nil)
                     
-                    //  self.performSegue(withIdentifier: "", sender: nil)
+                   
                     
                 }
                 else{

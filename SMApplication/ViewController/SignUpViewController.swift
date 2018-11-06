@@ -54,13 +54,13 @@ class SignUpViewController : UIViewController {
                     let okButton = UIAlertAction(title: "OK", style: .default){
                         (ok) in
                         let ref = Database.database().reference()
-                        ref.child("user").child(Auth.auth().currentUser!.uid).setValue(["emal":email,"age":18,"gender":"male"])
+                        ref.child("user").child(Auth.auth().currentUser!.uid).setValue(["emal":email,"age":"18","gender":"male"])
                     }
                     
                     alert.addAction(okButton)
                     self.present(alert, animated: true, completion: nil)
                     
-                    // self.performSegue(withIdentifier: "", sender: nil)
+                    self.performSegue(withIdentifier: "login", sender: nil)
                     
                 }
                 else{
