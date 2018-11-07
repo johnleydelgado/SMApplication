@@ -7,6 +7,6 @@ target 'SMApplication' do
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'MBProgressHUD'
-  pod 'SwiftyJSON'
+  pod 'JSQMessagesViewController'
 
 end
