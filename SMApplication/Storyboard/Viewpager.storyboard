@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="B8N-T0-7Vk">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -25,11 +25,42 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BG" translatesAutoresizingMaskIntoConstraints="NO" id="Miz-Ln-mFT">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Explore the world" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AMQ-y9-yBe">
+                                        <rect key="frame" x="45" y="100" width="285" height="46.666666666666657"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="34"/>
+                                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heart changes you. You change the world." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXo-Av-vKx">
+                                        <rect key="frame" x="37" y="148.33333333333334" width="302" height="55"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="5in-8H-bzG"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tag-CS-Oy8">
+                                        <rect key="frame" x="45" y="648" width="283" height="68"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="15"/>
+                                        <state key="normal" title="GET STARTED" backgroundImage="blank_button"/>
+                                        <connections>
+                                            <segue destination="EKO-4b-Wnn" kind="presentation" id="Rci-JY-79V"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Tag-CS-Oy8" secondAttribute="bottom" constant="96" id="67Q-ST-AeA"/>
+                                    <constraint firstItem="bXo-Av-vKx" firstAttribute="top" secondItem="AMQ-y9-yBe" secondAttribute="bottom" constant="2" id="838-gy-KzS"/>
+                                    <constraint firstItem="bXo-Av-vKx" firstAttribute="leading" secondItem="qh2-If-TQb" secondAttribute="leading" constant="37" id="Ewn-tH-EyF"/>
+                                    <constraint firstItem="AMQ-y9-yBe" firstAttribute="top" secondItem="qh2-If-TQb" secondAttribute="top" constant="100" id="HjN-TW-0Pd"/>
                                     <constraint firstAttribute="bottom" secondItem="Miz-Ln-mFT" secondAttribute="bottom" id="LaC-9P-daL"/>
+                                    <constraint firstItem="Tag-CS-Oy8" firstAttribute="leading" secondItem="qh2-If-TQb" secondAttribute="leading" constant="45" id="TVj-ba-plG"/>
                                     <constraint firstItem="Miz-Ln-mFT" firstAttribute="top" secondItem="qh2-If-TQb" secondAttribute="top" id="WKf-HJ-klL"/>
                                     <constraint firstAttribute="trailing" secondItem="Miz-Ln-mFT" secondAttribute="trailing" id="Yed-xB-cqk"/>
+                                    <constraint firstAttribute="trailing" secondItem="AMQ-y9-yBe" secondAttribute="trailing" constant="45" id="edb-Lz-vjJ"/>
+                                    <constraint firstItem="AMQ-y9-yBe" firstAttribute="leading" secondItem="qh2-If-TQb" secondAttribute="leading" constant="45" id="fmI-Iy-5ZY"/>
+                                    <constraint firstAttribute="trailing" secondItem="Tag-CS-Oy8" secondAttribute="trailing" constant="47" id="gzL-3G-XV1"/>
+                                    <constraint firstAttribute="trailing" secondItem="bXo-Av-vKx" secondAttribute="trailing" constant="36" id="p9x-23-9do"/>
                                     <constraint firstItem="Miz-Ln-mFT" firstAttribute="leading" secondItem="qh2-If-TQb" secondAttribute="leading" id="wO9-qF-UoB"/>
                                 </constraints>
                             </scrollView>
@@ -48,7 +79,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N1e-X2-J4o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="516" y="183"/>
+            <point key="canvasLocation" x="516" y="182.51231527093597"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="1jW-zO-cd8">
@@ -220,6 +251,9 @@
                                 <state key="normal" title="Skip">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="EKO-4b-Wnn" kind="presentation" id="sQ4-PT-5TX"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9vb-94-Znw">
                                 <rect key="frame" x="0.0" y="653" width="375" height="159"/>
@@ -245,6 +279,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h2b-og-Plp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="126" y="884"/>
+        </scene>
+        <!--Welcome-->
+        <scene sceneID="vwY-tj-r9S">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="Welcome" id="EKO-4b-Wnn" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mgJ-wE-td3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="824" y="755"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="iP1-s8-0Xb">
@@ -274,4 +316,7 @@
         <image name="smoke" width="376" height="305"/>
         <image name="star" width="322" height="221"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Rci-JY-79V"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -60,7 +60,7 @@ class SignUpViewController : UIViewController {
                     alert.addAction(okButton)
                     self.present(alert, animated: true, completion: nil)
                     
-                    self.performSegue(withIdentifier: "login", sender: nil)
+                    self.performSegue(withIdentifier: "SetupProfile", sender: nil)
                     
                 }
                 else{
@@ -77,8 +77,6 @@ class SignUpViewController : UIViewController {
         
         
     }
-    
-    
 }
 extension AuthErrorCode {
     var errorMessage: String {

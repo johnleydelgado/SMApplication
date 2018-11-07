@@ -15,6 +15,9 @@
 		9A7C2709C6ED6EA2C3611C8F /* Pods_SMApplication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A39D55CE5F9FF300731B8676 /* Pods_SMApplication.framework */; };
 		A57CF1152192057D00946C72 /* Viewpager.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A57CF1142192057D00946C72 /* Viewpager.storyboard */; };
 		A57CF11721920C5200946C72 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57CF11621920C5200946C72 /* PageViewController.swift */; };
+		A59889B92193622A003B2CE9 /* UserMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A59889B82193622A003B2CE9 /* UserMenu.storyboard */; };
+		A59889BB219365CD003B2CE9 /* imageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59889BA219365CD003B2CE9 /* imageView.swift */; };
+		A59889BD2193721F003B2CE9 /* SetupProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59889BC2193721F003B2CE9 /* SetupProfileViewController.swift */; };
 		A59D7B372190E921007C84C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59D7B362190E921007C84C2 /* AppDelegate.swift */; };
 		A59D7B392190E921007C84C2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59D7B382190E921007C84C2 /* LoginViewController.swift */; };
 		A59D7B3C2190E921007C84C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A59D7B3A2190E921007C84C2 /* Main.storyboard */; };
@@ -55,6 +58,9 @@
 		A39D55CE5F9FF300731B8676 /* Pods_SMApplication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SMApplication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A57CF1142192057D00946C72 /* Viewpager.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Viewpager.storyboard; sourceTree = "<group>"; };
 		A57CF11621920C5200946C72 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		A59889B82193622A003B2CE9 /* UserMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserMenu.storyboard; sourceTree = "<group>"; };
+		A59889BA219365CD003B2CE9 /* imageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageView.swift; sourceTree = "<group>"; };
+		A59889BC2193721F003B2CE9 /* SetupProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupProfileViewController.swift; sourceTree = "<group>"; };
 		A59D7B332190E920007C84C2 /* SMApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SMApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A59D7B362190E921007C84C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A59D7B382190E921007C84C2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +137,7 @@
 			children = (
 				A59D7B3A2190E921007C84C2 /* Main.storyboard */,
 				A57CF1142192057D00946C72 /* Viewpager.storyboard */,
+				A59889B82193622A003B2CE9 /* UserMenu.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -208,6 +215,7 @@
 				3D9505432191DD6F004355F3 /* ProfileViewController.swift */,
 				A57CF11621920C5200946C72 /* PageViewController.swift */,
 				3D35A781219340E600839CC5 /* MessageViewController.swift */,
+				A59889BC2193721F003B2CE9 /* SetupProfileViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -216,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				A59D7B6C2190E9A1007C84C2 /* Loading.swift */,
+				A59889BA219365CD003B2CE9 /* imageView.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -328,6 +337,7 @@
 			files = (
 				3D9505422191D5B7004355F3 /* GoogleService-Info.plist in Resources */,
 				A59D7B412190E922007C84C2 /* LaunchScreen.storyboard in Resources */,
+				A59889B92193622A003B2CE9 /* UserMenu.storyboard in Resources */,
 				A57CF1152192057D00946C72 /* Viewpager.storyboard in Resources */,
 				A59D7B3E2190E922007C84C2 /* Assets.xcassets in Resources */,
 				A59D7B3C2190E921007C84C2 /* Main.storyboard in Resources */,
@@ -410,8 +420,10 @@
 				A57CF11721920C5200946C72 /* PageViewController.swift in Sources */,
 				3D35A782219340E600839CC5 /* MessageViewController.swift in Sources */,
 				A59D7B392190E921007C84C2 /* LoginViewController.swift in Sources */,
+				A59889BB219365CD003B2CE9 /* imageView.swift in Sources */,
 				3D35A78A21934F2400839CC5 /* ChatConstant.swift in Sources */,
 				A59D7B6D2190E9A1007C84C2 /* Loading.swift in Sources */,
+				A59889BD2193721F003B2CE9 /* SetupProfileViewController.swift in Sources */,
 				3D9505442191DD6F004355F3 /* ProfileViewController.swift in Sources */,
 				A59D7B6F2190EB7A007C84C2 /* SignUpViewController.swift in Sources */,
 				A59D7B372190E921007C84C2 /* AppDelegate.swift in Sources */,
