@@ -8,5 +8,7 @@ target 'SMApplication' do
   pod 'Firebase/Database'
   pod 'MBProgressHUD'
   pod 'JSQMessagesViewController'
-
+  pod 'TPKeyboardAvoiding'
+  pod 'Apsara'
+  pod 'SDWebImage'
 end

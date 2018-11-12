@@ -8,11 +8,13 @@
 
 import UIKit
 import JSQMessagesViewController
-
+import Firebase
 
 class MessageViewController : JSQMessagesViewController {
     var message = [JSQMessage]()
-    
+    var recieverUser = ""
+    var roomname = ""
+    var recieveName = ""
     lazy var outgoingBubble: JSQMessagesBubbleImage = {
         return JSQMessagesBubbleImageFactory()!.outgoingMessagesBubbleImage(with: UIColor.jsq_messageBubbleBlue())
     }()
@@ -24,43 +26,52 @@ class MessageViewController : JSQMessagesViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        senderId = "1234"
-        senderDisplayName = "Ley"
-        
+        senderId = Auth.auth().currentUser!.uid
+        self.senderDisplayName = recieveName
+        title = recieveName
+        roomname = "chatroom_\(senderId<recieverUser ? senderId+"_"+recieverUser : recieverUser+"_"+senderId)"
+
         inputToolbar.contentView.leftBarButtonItem = nil
         collectionView.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
         collectionView.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
-        let query = ChatConstant.refs.child.queryLimited(toLast: 10)
-        
-        _ = query.observe(.childAdded, with: { [weak self] snapshot in
-            
-            if  let data        = snapshot.value as? [String: String],
-                let id          = data["age"],
-                let name        = data["emal"],
-                let text        = data["gender"],
-                !text.isEmpty
-            {
-                
-                
-                if let messages = JSQMessage(senderId: id, displayName: name, text: text)
-                {
-                    
-                    self?.message.append(messages)
-                    
-                    self?.finishReceivingMessage()
-                }
-            }
-        })
-        
-      //  self.edgesForExtendedLayout = []
+        messageBetweenUser()
+    
+        self.edgesForExtendedLayout = []
     }
     
+    func messageBetweenUser(){
+        let ref = Database.database().reference()
+        if let _ = senderId {
+            let query = ref.child("chatNew")
+            
+            _ = query.queryOrdered(byChild: "roomname").queryEqual(toValue: roomname).queryLimited(toLast: 50).observe(.childAdded, with: { [weak self] snapshot in
+                print(query)
+                
+                if let dict = snapshot.value as? [String:Any] {
+                    print(dict)
+                    let id = dict["sender_id"] as! String
+                    let name = dict["name"] as! String
+                    let text = dict["text"] as! String
+                    
+                    
+                    if let messages = JSQMessage(senderId: id, displayName: name, text: text)
+                    {
+                        
+                        self?.message.append(messages)
+                        
+                        self?.finishReceivingMessage()
+                    }
+                }
+            })
+        }
+    }
     
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
-        
-        let ref = ChatConstant.refs.child.childByAutoId()
-        let message = ["sender_id":senderId,"name":senderDisplayName,"text":text]
-        ref.setValue(message)
+        let ref2 = ChatConstant.refs.root.child("chatNew").childByAutoId()
+//        let ref3 = ref2.childByAutoId()
+//        let ref4 = ref3.child(roomname)
+        let message = ["roomname":roomname,"sender_id":senderId,"name":senderDisplayName,"text":text,"recieve_id":recieverUser]
+        ref2.setValue(message)
         finishSendingMessage(    )
         
     }

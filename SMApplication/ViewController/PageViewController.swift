@@ -12,7 +12,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
     
     
     var pageControl = UIPageControl()
-
+    
     lazy var orderedViewControllers: [UIViewController] = {
         return [self.newVc(viewController: "one"),
                 self.newVc(viewController: "two"),
@@ -25,8 +25,6 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
         self.dataSource = self
         self.delegate = self
         
-        
-        
         // This sets up the first view that will show up on our page control
         if let firstViewController = orderedViewControllers.first {
             setViewControllers([firstViewController],
@@ -34,7 +32,6 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
                                animated: true,
                                completion: nil)
         }
-        
         configurePageControl()
         
         // Do any additional setup after loading the view.
@@ -47,15 +44,14 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
         self.pageControl.numberOfPages = orderedViewControllers.count
         self.pageControl.currentPage = 0
         self.pageControl.tintColor = UIColor.black
-        self.pageControl.pageIndicatorTintColor = UIColor.white
-        self.pageControl.currentPageIndicatorTintColor = UIColor.init(red: 78.0, green: 67.0, blue: 249.0, alpha: 1)
+        self.pageControl.pageIndicatorTintColor = UIColor.black
+        self.pageControl.currentPageIndicatorTintColor = UIColor.blue
         self.view.addSubview(pageControl)
     }
     
     func newVc(viewController: String) -> UIViewController {
         return UIStoryboard(name: "Viewpager", bundle: nil).instantiateViewController(withIdentifier: viewController)
     }
-    
     
     // MARK: Delegate methords
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {

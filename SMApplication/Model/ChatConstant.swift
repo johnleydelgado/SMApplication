@@ -11,7 +11,7 @@ struct ChatConstant {
     
     struct refs {
         static let root = Database.database().reference()
-        static let child = root.child("chat")
+        static let child = root.child("chat/RoomID/123")
     }
     
 }

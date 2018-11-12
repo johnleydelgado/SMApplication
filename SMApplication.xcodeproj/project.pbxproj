@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D23FBAA2194EA070026CDAD /* UserTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D23FBA92194EA070026CDAD /* UserTabBarController.swift */; };
 		3D35A782219340E600839CC5 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D35A781219340E600839CC5 /* MessageViewController.swift */; };
 		3D35A78A21934F2400839CC5 /* ChatConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D35A78921934F2400839CC5 /* ChatConstant.swift */; };
+		3D8B65AD2195B2E5005EB394 /* SearchUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8B65AC2195B2E5005EB394 /* SearchUserViewController.swift */; };
+		3D8B65B02195BA15005EB394 /* SearchUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8B65AF2195BA15005EB394 /* SearchUserCell.swift */; };
+		3D8B65B52195D1B8005EB394 /* UserSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8B65B42195D1B8005EB394 /* UserSearch.swift */; };
+		3D8B65B92198E95D005EB394 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D8B65B82198E95C005EB394 /* Assets.xcassets */; };
 		3D9505422191D5B7004355F3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D9505412191D5B7004355F3 /* GoogleService-Info.plist */; };
 		3D9505442191DD6F004355F3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9505432191DD6F004355F3 /* ProfileViewController.swift */; };
 		3D9505472191E89F004355F3 /* UserConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9505462191E89F004355F3 /* UserConstant.swift */; };
@@ -16,12 +21,10 @@
 		A57CF1152192057D00946C72 /* Viewpager.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A57CF1142192057D00946C72 /* Viewpager.storyboard */; };
 		A57CF11721920C5200946C72 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57CF11621920C5200946C72 /* PageViewController.swift */; };
 		A59889B92193622A003B2CE9 /* UserMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A59889B82193622A003B2CE9 /* UserMenu.storyboard */; };
-		A59889BB219365CD003B2CE9 /* imageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59889BA219365CD003B2CE9 /* imageView.swift */; };
 		A59889BD2193721F003B2CE9 /* SetupProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59889BC2193721F003B2CE9 /* SetupProfileViewController.swift */; };
 		A59D7B372190E921007C84C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59D7B362190E921007C84C2 /* AppDelegate.swift */; };
 		A59D7B392190E921007C84C2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59D7B382190E921007C84C2 /* LoginViewController.swift */; };
 		A59D7B3C2190E921007C84C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A59D7B3A2190E921007C84C2 /* Main.storyboard */; };
-		A59D7B3E2190E922007C84C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A59D7B3D2190E922007C84C2 /* Assets.xcassets */; };
 		A59D7B412190E922007C84C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A59D7B3F2190E922007C84C2 /* LaunchScreen.storyboard */; };
 		A59D7B4C2190E922007C84C2 /* SMApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59D7B4B2190E922007C84C2 /* SMApplicationTests.swift */; };
 		A59D7B572190E922007C84C2 /* SMApplicationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59D7B562190E922007C84C2 /* SMApplicationUITests.swift */; };
@@ -47,10 +50,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D23FBA92194EA070026CDAD /* UserTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTabBarController.swift; sourceTree = "<group>"; };
 		3D35A781219340E600839CC5 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		3D35A7832193416700839CC5 /* MessengerKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MessengerKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D35A78921934F2400839CC5 /* ChatConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatConstant.swift; sourceTree = "<group>"; };
 		3D35A78B219356F000839CC5 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		3D8B65AC2195B2E5005EB394 /* SearchUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserViewController.swift; sourceTree = "<group>"; };
+		3D8B65AF2195BA15005EB394 /* SearchUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserCell.swift; sourceTree = "<group>"; };
+		3D8B65B42195D1B8005EB394 /* UserSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearch.swift; sourceTree = "<group>"; };
+		3D8B65B82198E95C005EB394 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D9505412191D5B7004355F3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3D9505432191DD6F004355F3 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		3D9505462191E89F004355F3 /* UserConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserConstant.swift; sourceTree = "<group>"; };
@@ -59,13 +67,11 @@
 		A57CF1142192057D00946C72 /* Viewpager.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Viewpager.storyboard; sourceTree = "<group>"; };
 		A57CF11621920C5200946C72 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		A59889B82193622A003B2CE9 /* UserMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserMenu.storyboard; sourceTree = "<group>"; };
-		A59889BA219365CD003B2CE9 /* imageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageView.swift; sourceTree = "<group>"; };
 		A59889BC2193721F003B2CE9 /* SetupProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupProfileViewController.swift; sourceTree = "<group>"; };
 		A59D7B332190E920007C84C2 /* SMApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SMApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A59D7B362190E921007C84C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A59D7B382190E921007C84C2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A59D7B3B2190E921007C84C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A59D7B3D2190E922007C84C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A59D7B402190E922007C84C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A59D7B422190E922007C84C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A59D7B472190E922007C84C2 /* SMApplicationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SMApplicationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,11 +111,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D8B65AE2195BA06005EB394 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3D8B65AF2195BA15005EB394 /* SearchUserCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		3D9505452191E888004355F3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				3D9505462191E89F004355F3 /* UserConstant.swift */,
 				3D35A78921934F2400839CC5 /* ChatConstant.swift */,
+				3D8B65B42195D1B8005EB394 /* UserSearch.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -168,12 +183,13 @@
 		A59D7B352190E920007C84C2 /* SMApplication */ = {
 			isa = PBXGroup;
 			children = (
+				3D8B65B82198E95C005EB394 /* Assets.xcassets */,
+				3D8B65AE2195BA06005EB394 /* Cell */,
 				A57CF1132192053400946C72 /* Storyboard */,
 				3D9505452191E888004355F3 /* Model */,
 				A59D7B722190EBDE007C84C2 /* Class */,
 				A59D7B712190EBCA007C84C2 /* ViewController */,
 				A59D7B702190EBB8007C84C2 /* Common */,
-				A59D7B3D2190E922007C84C2 /* Assets.xcassets */,
 			);
 			path = SMApplication;
 			sourceTree = "<group>";
@@ -216,6 +232,8 @@
 				A57CF11621920C5200946C72 /* PageViewController.swift */,
 				3D35A781219340E600839CC5 /* MessageViewController.swift */,
 				A59889BC2193721F003B2CE9 /* SetupProfileViewController.swift */,
+				3D23FBA92194EA070026CDAD /* UserTabBarController.swift */,
+				3D8B65AC2195B2E5005EB394 /* SearchUserViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -224,7 +242,6 @@
 			isa = PBXGroup;
 			children = (
 				A59D7B6C2190E9A1007C84C2 /* Loading.swift */,
-				A59889BA219365CD003B2CE9 /* imageView.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -339,7 +356,7 @@
 				A59D7B412190E922007C84C2 /* LaunchScreen.storyboard in Resources */,
 				A59889B92193622A003B2CE9 /* UserMenu.storyboard in Resources */,
 				A57CF1152192057D00946C72 /* Viewpager.storyboard in Resources */,
-				A59D7B3E2190E922007C84C2 /* Assets.xcassets in Resources */,
+				3D8B65B92198E95D005EB394 /* Assets.xcassets in Resources */,
 				A59D7B3C2190E921007C84C2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,21 +385,27 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SMApplication/Pods-SMApplication-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Apsara/Apsara.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/JSQMessagesViewController/JSQMessagesViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/TPKeyboardAvoiding/TPKeyboardAvoiding.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Apsara.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQMessagesViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQSystemSoundPlayer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TPKeyboardAvoiding.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -417,10 +440,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D9505472191E89F004355F3 /* UserConstant.swift in Sources */,
+				3D8B65AD2195B2E5005EB394 /* SearchUserViewController.swift in Sources */,
+				3D8B65B52195D1B8005EB394 /* UserSearch.swift in Sources */,
 				A57CF11721920C5200946C72 /* PageViewController.swift in Sources */,
 				3D35A782219340E600839CC5 /* MessageViewController.swift in Sources */,
+				3D8B65B02195BA15005EB394 /* SearchUserCell.swift in Sources */,
 				A59D7B392190E921007C84C2 /* LoginViewController.swift in Sources */,
-				A59889BB219365CD003B2CE9 /* imageView.swift in Sources */,
+				3D23FBAA2194EA070026CDAD /* UserTabBarController.swift in Sources */,
 				3D35A78A21934F2400839CC5 /* ChatConstant.swift in Sources */,
 				A59D7B6D2190E9A1007C84C2 /* Loading.swift in Sources */,
 				A59889BD2193721F003B2CE9 /* SetupProfileViewController.swift in Sources */,

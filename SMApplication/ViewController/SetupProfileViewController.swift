@@ -9,11 +9,11 @@
 import UIKit
 import FirebaseAuth
 import Firebase
+import Photos
 class SetupProfileViewController : UIViewController {
     let loading = Loading()
     
     @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var ageTextField: UITextField!
     @IBOutlet weak var genderTextField: UITextField!
     
@@ -21,9 +21,10 @@ class SetupProfileViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        checkPermission()
+        profileImageView.setRounded()
         profileImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(profileTouch)))
     }
-    
     
     
     @IBAction func pickGender(_ sender: Any) {
@@ -49,10 +50,9 @@ class SetupProfileViewController : UIViewController {
     }
     func SignUpValidation(){
         let name = nameTextField.text!
-        let email = emailTextField.text!
         let age = ageTextField.text!
         let gender = genderTextField.text!
-        if email == "" || name == "" || age == "" || gender == ""{
+        if name == "" || age == "" || gender == ""{
             
             let alert = UIAlertController(title: "Sign Up", message: "Please fill up all the required fields", preferredStyle: .alert)
             let okButton = UIAlertAction(title: "OK", style: .default)
@@ -61,42 +61,75 @@ class SetupProfileViewController : UIViewController {
         }
             
         else{
-            loading.showLoading(to_view: self.view)
-            let filePath = "profile.png"
+           
+            let filePath = "profiles"
             let storageRef = Storage.storage().reference().child(filePath)
             
             if let uploadData = UIImagePNGRepresentation(self.profileImageView.image!){
-                storageRef.putData(uploadData, metadata: nil,completion:{
-                    (metaData,error) in
-                    if error != nil{
-                        
+                  loading.showLoading(to_view: self.view)
+                let riversRef = storageRef.child("profile-\(Auth.auth().currentUser!.uid).png")
+                _ = riversRef.putData(uploadData, metadata: nil) { (metadata, error) in
+                    guard let _ = metadata else {
+                        // Uh-oh, an error occurred!
+                        return
                     }
-                    UserConstant.refs.root.child("user").child(Auth.auth().currentUser!.uid).setValue(["name":name,"email":email,"age":age,"gender":gender,"photo":])
-                })
-                
-            }
-            self.loading.hideLoading(to_view: self.view)
-            let alert = UIAlertController(title: "Sucess", message: "Profile Created", preferredStyle: .alert)
-            let okButton = UIAlertAction(title: "OK", style: .default){
-                (ok) in
+                    riversRef.downloadURL { (url2, error) in
+                        
+                        if let error = error {
+                            // Uh-oh, an error occurred!
+                            
+                        }
+                        else{
+                            let userEmail = Auth.auth().currentUser?.email
+                           let uid = Auth.auth().currentUser!.uid
+                            
+                            UserConstant.refs.root.child("user").child(uid).setValue(["uid":uid,"name":name,"email":userEmail,"age":age,"gender":gender,"photo":url2!.absoluteString])
+                            
+                            self.loading.hideLoading(to_view: self.view)
+                            let alert = UIAlertController(title: "Sucess", message: "Profile Created", preferredStyle: .alert)
+                            let okButton = UIAlertAction(title: "OK", style: .default){
+                                (ok) in
+                                self.performSegue(withIdentifier: "userMenu", sender: nil)
+                                
+                            }
+                            
+                            alert.addAction(okButton)
+                            self.present(alert, animated: true, completion: nil)
+                        }
+                    }
+                    
+                    
+                }
+       
                 
             }
             
-            alert.addAction(okButton)
-            self.present(alert, animated: true, completion: nil)
             
         }
-        
-        
     }
-    func uploadImagePic(img1 :UIImage){
-        var data2 = NSData()
-        data2 = UIImageJPEGRepresentation(img1, 0.8)! as NSData
-        // set upload path
-        // path where you wanted to store img in storage
-        let metaData = StorageMetadata()
-        metaData.contentType = "image/jpg"
-
+    
+    func checkPermission() {
+        let photoAuthorizationStatus = PHPhotoLibrary.authorizationStatus()
+        switch photoAuthorizationStatus {
+        case .authorized:
+            print("Access is granted by user")
+        case .notDetermined:
+            PHPhotoLibrary.requestAuthorization({
+                (newStatus) in
+                print("status is \(newStatus)")
+                if newStatus ==  PHAuthorizationStatus.authorized {
+                    /* do stuff here */
+                    print("success")
+                }
+            })
+            print("It is not determined until now")
+        case .restricted:
+            // same same
+            print("User do not have access to photo album.")
+        case .denied:
+            // same same
+            print("User has denied the permission.")
+        }
     }
 }
 
@@ -105,12 +138,13 @@ extension SetupProfileViewController : UIImagePickerControllerDelegate,UINavigat
     
     @objc func profileTouch (){
         let picker = UIImagePickerController()
+        picker.delegate = self
         self.present(picker, animated: true, completion: nil)
         
         
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         var selectedPicker : UIImage?
         if let editedImage = info["UIImagePickerControllerEditedImage"]as? UIImage{
@@ -120,11 +154,15 @@ extension SetupProfileViewController : UIImagePickerControllerDelegate,UINavigat
         }
         if let selectedImage = selectedPicker {
             self.profileImageView.image = selectedImage
+            
         }
+        
+        
+        picker.dismiss(animated: true, completion: nil)
         
     }
     
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+    @objc func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         self.dismiss(animated: true, completion: nil)
     }
     

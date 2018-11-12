@@ -50,15 +50,15 @@ class SignUpViewController : UIViewController {
                 
                 if error == nil{
                     self.loading.hideLoading(to_view: self.view)
-                    let alert = UIAlertController(title: "Sign up", message: "Login Success", preferredStyle: .alert)
-                    let okButton = UIAlertAction(title: "OK", style: .default){
-                        (ok) in
-                        let ref = Database.database().reference()
-                        ref.child("user").child(Auth.auth().currentUser!.uid).setValue(["emal":email,"age":"18","gender":"male"])
-                    }
-                    
-                    alert.addAction(okButton)
-                    self.present(alert, animated: true, completion: nil)
+//                    let alert = UIAlertController(title: "Sign up", message: "Login Success", preferredStyle: .alert)
+//                    let okButton = UIAlertAction(title: "OK", style: .default){
+//                        (ok) in
+//                        let ref = Database.database().reference()
+//                        ref.child("user").child(Auth.auth().currentUser!.uid).setValue(["emal":email,"age":"18","gender":"male"])
+//                    }
+//
+//                    alert.addAction(okButton)
+//                    self.present(alert, animated: true, completion: nil)
                     
                     self.performSegue(withIdentifier: "SetupProfile", sender: nil)
                     

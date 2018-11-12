@@ -9,34 +9,70 @@
 import UIKit
 import FirebaseAuth
 import Firebase
-class ProfileViewController : UIViewController {
+class ProfileViewController : UITableViewController {
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var emailLabel: UILabel!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    @IBOutlet weak var hideOne: UITableViewCell!
+    @IBOutlet weak var hideTwo: UITableViewCell!
+    @IBOutlet weak var hideThree: UITableViewCell!
+    @IBOutlet weak var hideFour: UITableViewCell!
+    
+    
+    
+    @IBOutlet var customTableView: UITableView!
+    let loading = Loading()
+    override func viewWillAppear(_ animated: Bool) {
+        
+        super.viewWillAppear(true)
+        customTableView.delegate = self
+        customTableView.dataSource = self
+        self.profileImageView.setRounded()
+        self.loading.showLoading(to_view: self.view)
+        
+        self.hideOne.isHidden = true
+        self.hideTwo.isHidden = true
+        self.hideThree.isHidden = true
+        self.hideFour.isHidden = true
+        
+        
         let user = Auth.auth().currentUser
-//
-//        print(user?.email)
-//        print(user?.uid)
+        //
+        //        print(user?.email)
+        //        print(user?.uid)
         let uid = user?.uid
-        let ref = UserConstant.refs.child
+        let ref = UserConstant.refs.root.child("user")
+        
         ref.queryOrdered(byChild: uid!).observeSingleEvent(of: .value) {
             (snapshot) in
-            //print(snapshot)
             if snapshot.exists() {
                 let dic = snapshot.value as? [String:Any]
-                
-//                let email = dic!["email"] as? String
-//                print(email)
                 if let uidDic = dic![uid!] as? [String:Any]{
-                    print(uidDic)
-                    let email = uidDic["age"]
-                    print(email)
-//                    for index in uidDic.values {
-//
-//                    }
-
+                    //let age = uidDic["age"] as! String
+                    let email = uidDic["email"] as! String
+                    //let gender = uidDic["gender"] as! String
+                    let name = uidDic["name"] as! String
+                    let photoUrl = uidDic["photo"] as! String
+                    let storageRef = Storage.storage().reference(forURL: photoUrl)
+                    storageRef.downloadURL(completion: { (url,error) in
+                        
+                        let data = try? Data(contentsOf: url!)
+                        let image = UIImage(data: data! )
+                        self.profileImageView.image = image
+                        self.loading.hideLoading(to_view: self.view)
+                        self.nameLabel.text = name
+                        self.emailLabel.text = email
+                        self.hideOne.isHidden = false
+                        self.hideTwo.isHidden = false
+                        self.hideThree.isHidden = false
+                        self.hideFour.isHidden = false
+                        
+                        
+                    })
+                    
                 }
-               
+                
             }
             
         }
@@ -44,4 +80,19 @@ class ProfileViewController : UIViewController {
         
     }
     
+    
 }
+
+extension UIImageView {
+    func setRounded() {
+        self.layer.cornerRadius = self.frame.size.width / 2
+        
+        self.clipsToBounds = true
+        
+        self.layer.borderColor = UIColor.white.cgColor
+        
+        self.layer.borderWidth = 5
+    }
+  
+}
+
