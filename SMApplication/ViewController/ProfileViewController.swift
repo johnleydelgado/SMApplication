@@ -36,11 +36,7 @@ class ProfileViewController : UITableViewController {
         self.hideThree.isHidden = true
         self.hideFour.isHidden = true
         
-        
         let user = Auth.auth().currentUser
-        //
-        //        print(user?.email)
-        //        print(user?.uid)
         let uid = user?.uid
         let ref = UserConstant.refs.root.child("user")
         
@@ -67,17 +63,12 @@ class ProfileViewController : UITableViewController {
                         self.hideTwo.isHidden = false
                         self.hideThree.isHidden = false
                         self.hideFour.isHidden = false
-                        
-                        
-                    })
-                    
+                        })
                 }
                 
             }
             
         }
-        
-        
     }
     
     
@@ -93,6 +84,6 @@ extension UIImageView {
         
         self.layer.borderWidth = 5
     }
-  
+    
 }
 

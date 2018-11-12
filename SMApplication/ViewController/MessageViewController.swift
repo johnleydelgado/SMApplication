@@ -52,8 +52,6 @@ class MessageViewController : JSQMessagesViewController {
                     let id = dict["sender_id"] as! String
                     let name = dict["name"] as! String
                     let text = dict["text"] as! String
-                    
-                    
                     if let messages = JSQMessage(senderId: id, displayName: name, text: text)
                     {
                         
@@ -68,15 +66,10 @@ class MessageViewController : JSQMessagesViewController {
     
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
         let ref2 = ChatConstant.refs.root.child("chatNew").childByAutoId()
-//        let ref3 = ref2.childByAutoId()
-//        let ref4 = ref3.child(roomname)
         let message = ["roomname":roomname,"sender_id":senderId,"name":senderDisplayName,"text":text,"recieve_id":recieverUser]
         ref2.setValue(message)
         finishSendingMessage(    )
-        
     }
-    
-    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return message.count
     }
@@ -104,9 +97,6 @@ class MessageViewController : JSQMessagesViewController {
         
         return message[indexPath.item].senderId == senderId ? 0 : 15
     }
-    
-    
-    
 }
 
 extension JSQMessagesViewController {

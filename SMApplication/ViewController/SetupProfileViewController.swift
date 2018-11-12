@@ -61,12 +61,12 @@ class SetupProfileViewController : UIViewController {
         }
             
         else{
-           
+            
             let filePath = "profiles"
             let storageRef = Storage.storage().reference().child(filePath)
             
             if let uploadData = UIImagePNGRepresentation(self.profileImageView.image!){
-                  loading.showLoading(to_view: self.view)
+                loading.showLoading(to_view: self.view)
                 let riversRef = storageRef.child("profile-\(Auth.auth().currentUser!.uid).png")
                 _ = riversRef.putData(uploadData, metadata: nil) { (metadata, error) in
                     guard let _ = metadata else {
@@ -81,7 +81,7 @@ class SetupProfileViewController : UIViewController {
                         }
                         else{
                             let userEmail = Auth.auth().currentUser?.email
-                           let uid = Auth.auth().currentUser!.uid
+                            let uid = Auth.auth().currentUser!.uid
                             
                             UserConstant.refs.root.child("user").child(uid).setValue(["uid":uid,"name":name,"email":userEmail,"age":age,"gender":gender,"photo":url2!.absoluteString])
                             
@@ -100,7 +100,7 @@ class SetupProfileViewController : UIViewController {
                     
                     
                 }
-       
+                
                 
             }
             

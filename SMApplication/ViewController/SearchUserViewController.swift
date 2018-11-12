@@ -16,7 +16,6 @@ class SearchUserViewController: UIViewController, UITableViewDataSource, UITable
     @IBOutlet weak var tableView: UITableView!
     let loading = Loading()
     var searchActive : Bool = false
-    
     var recieverUser = ""
     var recieveName = ""
     

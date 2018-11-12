@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3D23FBAA2194EA070026CDAD /* UserTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D23FBA92194EA070026CDAD /* UserTabBarController.swift */; };
 		3D35A782219340E600839CC5 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D35A781219340E600839CC5 /* MessageViewController.swift */; };
 		3D35A78A21934F2400839CC5 /* ChatConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D35A78921934F2400839CC5 /* ChatConstant.swift */; };
 		3D8B65AD2195B2E5005EB394 /* SearchUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8B65AC2195B2E5005EB394 /* SearchUserViewController.swift */; };
@@ -50,7 +49,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3D23FBA92194EA070026CDAD /* UserTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTabBarController.swift; sourceTree = "<group>"; };
 		3D35A781219340E600839CC5 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		3D35A7832193416700839CC5 /* MessengerKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MessengerKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D35A78921934F2400839CC5 /* ChatConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatConstant.swift; sourceTree = "<group>"; };
@@ -232,7 +230,6 @@
 				A57CF11621920C5200946C72 /* PageViewController.swift */,
 				3D35A781219340E600839CC5 /* MessageViewController.swift */,
 				A59889BC2193721F003B2CE9 /* SetupProfileViewController.swift */,
-				3D23FBA92194EA070026CDAD /* UserTabBarController.swift */,
 				3D8B65AC2195B2E5005EB394 /* SearchUserViewController.swift */,
 			);
 			path = ViewController;
@@ -446,7 +443,6 @@
 				3D35A782219340E600839CC5 /* MessageViewController.swift in Sources */,
 				3D8B65B02195BA15005EB394 /* SearchUserCell.swift in Sources */,
 				A59D7B392190E921007C84C2 /* LoginViewController.swift in Sources */,
-				3D23FBAA2194EA070026CDAD /* UserTabBarController.swift in Sources */,
 				3D35A78A21934F2400839CC5 /* ChatConstant.swift in Sources */,
 				A59D7B6D2190E9A1007C84C2 /* Loading.swift in Sources */,
 				A59889BD2193721F003B2CE9 /* SetupProfileViewController.swift in Sources */,
